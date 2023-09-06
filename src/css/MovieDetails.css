@@ -1,29 +1,54 @@
-.movie-details-container {
+.movie-details {
+  margin-left: 3em;
+  width: 95%;
+  margin-top: 2em;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #555;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.movie-poster {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+.movie-details .poster {
+  flex: 0 0 30%;
+  margin-right: 16px;
+  min-width: 200px;
 }
 
-.movie-title {
+.movie-details .info {
+  flex: 1;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.movie-details img {
+  width: 90%;
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.movie-details h2 {
   font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.movie-release-year {
-  font-size: 16px;
-  color: #888;
-  margin-bottom: 10px;
+.movie-details p {
+  margin: 8px 0;
 }
 
-.movie-synopsis {
-  font-size: 18px;
-  text-align: center;
+.movie-details h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.movie-details section {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  margin-bottom: 16px;
 }

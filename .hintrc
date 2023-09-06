@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ],
+    "button-type": "off",
+    "axe/forms": "off",
+    "no-inline-styles": "off"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 116",
+    "not firefox <= 115",
+    "not firefox <= 117"
+  ]
+}
