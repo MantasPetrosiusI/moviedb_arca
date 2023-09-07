@@ -67,7 +67,7 @@ button {
 }
 
 .input-search::placeholder {
-  color: rgba(227, 39, 39, 0.5);
+  color: #ea8181;
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
