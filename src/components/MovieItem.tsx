@@ -16,31 +16,38 @@ interface MovieItemProps {
   imdbID: string;
 }
 
+const localStorageKey = "LastMoviesSearched";
+
 const MovieItem: React.FC<MovieItemProps> = ({
   poster,
   title,
   year,
   imdbID,
 }) => {
-  function handleClick() {
-    const movieInfo = {
-      imdbID: imdbID,
-      title: title,
-      year: year,
-      poster: poster,
-    };
+  const handleClick = () => {
+    try {
+      const movieInfo = {
+        imdbID: imdbID,
+        title: title,
+        year: year,
+        poster: poster,
+      };
 
-    const existingMovies =
-      JSON.parse(localStorage.getItem("LastMoviesSearched") || "[]") || [];
+      const existingMovies: MovieItemProps[] = JSON.parse(
+        localStorage.getItem(localStorageKey) || "[]"
+      );
 
-    existingMovies.unshift(movieInfo);
+      existingMovies.unshift(movieInfo);
 
-    if (existingMovies.length > 10) {
-      existingMovies.pop();
+      if (existingMovies.length > 10) {
+        existingMovies.pop();
+      }
+
+      localStorage.setItem(localStorageKey, JSON.stringify(existingMovies));
+    } catch (error) {
+      console.error("Error while handling local storage:", error);
     }
-
-    localStorage.setItem("LastMoviesSearched", JSON.stringify(existingMovies));
-  }
+  };
 
   return (
     <Card className="movie-card">

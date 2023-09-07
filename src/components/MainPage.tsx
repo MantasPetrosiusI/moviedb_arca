@@ -1,10 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard";
 
 interface Movie {
   imdbID: string;
@@ -13,43 +10,37 @@ interface Movie {
   poster: string;
 }
 
-const headingStyle: React.CSSProperties = {
-  marginTop: "20px",
-  textAlign: "center",
-};
+const MainPage: React.FC = () => {
+  const getStoredMovies = (): Movie[] => {
+    try {
+      const storedMovies = localStorage.getItem("LastMoviesSearched");
+      if (storedMovies) {
+        return JSON.parse(storedMovies);
+      }
+    } catch (error) {
+      console.error("Error parsing stored movies:", error);
+    }
+    return [];
+  };
 
-const MainPage = () => {
-  const storedMovies: Movie[] = JSON.parse(
-    localStorage.getItem("LastMoviesSearched") || "[]"
-  );
+  const storedMovies: Movie[] = getStoredMovies();
 
   return (
     <div className="main-container">
-      <h2 style={headingStyle}>Last Movies Looked Up</h2>
-      <Grid container spacing={2}>
-        {storedMovies.map((movie: Movie) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={movie.imdbID}>
-            <Card
-              className="movie-card"
-              component={Link}
-              to={`/movie/${movie.imdbID}`}
-            >
-              <CardMedia
-                component="img"
-                alt={movie.title}
-                height="240"
-                image={movie.poster}
-                className="poster-image"
-              />
-              <CardContent>
-                <Typography variant="h6" component="div">
-                  {movie.title}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <h2 style={{ textAlign: "center" }}>Last Movies Looked Up</h2>
+      {storedMovies.length === 0 ? (
+        <Typography variant="body1" style={{ textAlign: "center" }}>
+          No movies found.
+        </Typography>
+      ) : (
+        <Grid container spacing={2}>
+          {storedMovies.map((movie: Movie) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={movie.imdbID}>
+              <MovieCard movie={movie} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </div>
   );
 };

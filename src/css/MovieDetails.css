@@ -1,13 +1,9 @@
 .movie-details {
-  margin-left: 3em;
-  width: 95%;
-  margin-top: 2em;
+  margin: 1em 1em;
+  padding: 16px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   background-color: #555;
   color: white;
-  padding: 16px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

@@ -1,7 +1,6 @@
 .movie-card {
   width: 90%;
   margin: 0.5em auto;
-  position: relative;
   display: flex;
   align-items: flex-start;
   background: linear-gradient(
@@ -9,10 +8,14 @@
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.7) 70%
   );
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .poster-image {
   width: 35% !important;
+  max-width: 100%;
 }
 
 .text-content {
@@ -27,8 +30,18 @@
   right: 0;
   padding: 1em;
 }
+
 .movie-list a {
   color: #333333;
   background-color: #555555;
   outline: 1px solid #10100f;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.movie-list a:hover {
+  background-color: #10100f;
+  color: white;
 }

@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "../css/Navigation.css";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchMovies } from "../redux/actions";
 import { useAppDispatch } from "../redux/hooks";
-import { Link, useNavigate } from "react-router-dom";
+import "../css/Navigation.css";
 
 const Navigation: React.FC = () => {
   const [searchVisible, setSearchVisible] = useState(false);
@@ -14,21 +13,21 @@ const Navigation: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === "Enter" && searchText.trim() !== "") {
-        dispatch(fetchMovies(searchText));
-        setSearchText("");
-        navigate(`/search/keyword=${searchText}`);
-      }
-    };
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && searchText.trim() !== "") {
+      dispatch(fetchMovies(searchText));
+      setSearchText("");
+      navigate(`/search/keyword=${searchText}`);
+    }
+  };
 
-    window.addEventListener("keydown", handleKeyPress);
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress as any);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyPress);
+      window.removeEventListener("keydown", handleKeyPress as any);
     };
-  }, [searchText, dispatch]);
+  }, [searchText, dispatch, navigate]);
 
   const handleSearchClick = () => {
     setSearchVisible((prevSearchVisible) => !prevSearchVisible);
@@ -45,7 +44,7 @@ const Navigation: React.FC = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand as={Link} to="/">
           <img
             alt="logo"
             src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png"
@@ -53,10 +52,12 @@ const Navigation: React.FC = () => {
           />
         </Navbar.Brand>
         <Navbar.Text className="home">
-          <Link to={"/"}>Home</Link>
+          <Link to="/">Home</Link>
         </Navbar.Text>
         <div className={`search-box`}>
-          <i className={`bi bi-search`} onClick={handleSearchClick}></i>
+          <span className="search" onClick={handleSearchClick}>
+            Search
+          </span>
           <Form.Control
             type="text"
             id="input-search"

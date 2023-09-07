@@ -1,24 +1,41 @@
 .search-page {
   display: flex;
   padding: 20px;
-  flex-direction: row;
 }
 
 .search-input {
-  width: 100%;
+  flex: 1;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
 }
 
 .search-button {
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
 .movie-list {
-  width: 60%;
+  flex: 1;
+}
+
+.keyword-list {
+  flex-basis: 250px;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.keyword-list h2 {
+  margin-top: 0;
 }

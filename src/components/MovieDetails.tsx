@@ -6,7 +6,7 @@ import { RootState } from "../redux/interfaces";
 import "../css/MovieDetails.css";
 import Spinner from "./Spinner";
 
-const MovieDetails = () => {
+const MovieDetails: React.FC = () => {
   const { imdbID } = useParams<{ imdbID: string }>();
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector(
@@ -21,12 +21,11 @@ const MovieDetails = () => {
   const setMovie = useAppSelector((state: RootState) => state.movies.movie);
 
   if (isLoading) {
-    // Display the Spinner while loading
     return <Spinner />;
   }
 
   if (!setMovie) {
-    return <div>Loading...</div>;
+    return <div>No movie details available.</div>;
   }
 
   return (
