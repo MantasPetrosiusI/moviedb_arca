@@ -1,16 +1,39 @@
 # Movie Search App
 
-## Description
+This is a React application that allows users to search for movies by title and view detailed information about each movie. It utilizes the OMDBApi for fetching movie data.
 
-The Movie Search App is a web application that allows users to search for movies by title using the OMDBApi. Users can click on a movie to view its details, including a summary, genre, year, age rating, runtime, director, writer, actors, and a full poster.
+## Table of Contents
+
+- [Movie Search App](#movie-search-app)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Folder Structure](#folder-structure)
+  - [Technologies Used](#technologies-used)
+  - [Contributing](#contributing)
+
+## Features
+
+- **Search Page:** Users can search for movies by entering a title.
+- **Search Results:** Displays a list of movies matching the search criteria with titles, poster images, and release years.
+- **Movie Details:** Clicking on a movie in the search results leads to a details page with additional information about the selected movie.
+- **Redux State Management:** Manages application state using Redux for efficient data sharing between components.
+- **React Router:** Implements client-side routing for different pages or components.
+- **API Integration:** Fetches movie data from the OMDBApi using API service functions.
 
 ## Installation
 
-To run the Movie Search App, follow these steps:
+To run this application locally, follow these steps:
 
-1. Clone this repository to your local machine.
-2. Navigate to the project directory using your terminal.
-3. Run the following command to install the required dependencies using npm or yarn:
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/movie-search-app.git
+   cd movie-search-app
+   ```
+
+2. Install the project dependencies:
 
    ```bash
    npm install
@@ -18,31 +41,63 @@ To run the Movie Search App, follow these steps:
    yarn
    ```
 
-4. Obtain an OMDBApi key by visiting [https://www.omdbapi.com](https://www.omdbapi.com) and sign up for a free account.
-5. Create a `.env` file in the project root and add your OMDBApi key like this:
+3. Create a `.env` file in the root directory and add your OMDBApi key:
 
    ```
    REACT_APP_OMDB_API_KEY=your_api_key_here
    ```
 
+4. Start the development server:
+
+   ```bash
+   npm start
+   # OR
+   yarn start
+   ```
+
+5. Open your web browser and navigate to `http://localhost:3000` to access the application.
+
 ## Usage
 
-To start the Movie Search App, run the following command:
+- Launch the application using the instructions provided in the Installation section.
+- On the search page, enter a movie title in the search input field and press Enter.
+- View the search results, click on a movie to see its details, and navigate between pages using the provided links.
 
-```bash
-npm start
-# OR
-yarn start
-```
+## Folder Structure
 
-Once the application is running, open your web browser and navigate to `http://localhost:3000`. You can now search for movies by title and view their details.
+The project directory is structured as follows:
 
-## Contact Information
+- `src/`: Contains the application source code.
+  - `components/`: Houses React components.
+  - `redux/`: Manages Redux actions, reducers, and store configuration.
+  - `css/`: Houses all css of the aplication.
+  - `App.ts`: Main application component.
+  - `index.ts`: Entry point of the application.
+  - `index.css`: css file of index.ts.
+- `.env`: Environmental variables
 
-If you have any questions or encounter issues, feel free to reach out to the project owner:
+## Technologies Used
 
-- Email: mantas.petrosius@outlook.com
+- React
+- Redux
+- React Router
+- Fetch API (for API requests)
+- CSS for styling
+- Material-UI (including @mui/material and @mui/icons-material)
+- Bootstrap (including react-bootstrap and bootstrap-icons)
+- react-modal
+- Redux Toolkit
+- Redux Persist
+- TypeScript
+- Testing Libraries (including @testing-library/jest-dom, @testing-library/react, @testing-library/user-event)
+- Other Dev Dependencies and TypeScript Definitions
 
-## Acknowledgments
+## Contributing
 
-Thank you to the OMDBApi for providing movie data.
+Contributions to this project are welcome. To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
