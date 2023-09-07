@@ -5,9 +5,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 import "../css/MovieItem.css";
-import { Link } from "react-router-dom";
 
 interface MovieItemProps {
   poster: string;
@@ -22,6 +22,26 @@ const MovieItem: React.FC<MovieItemProps> = ({
   year,
   imdbID,
 }) => {
+  function handleClick() {
+    const movieInfo = {
+      imdbID: imdbID,
+      title: title,
+      year: year,
+      poster: poster,
+    };
+
+    const existingMovies =
+      JSON.parse(localStorage.getItem("LastMoviesSearched") || "[]") || [];
+
+    existingMovies.unshift(movieInfo);
+
+    if (existingMovies.length > 10) {
+      existingMovies.pop();
+    }
+
+    localStorage.setItem("LastMoviesSearched", JSON.stringify(existingMovies));
+  }
+
   return (
     <Card className="movie-card">
       <CardMedia
@@ -40,7 +60,12 @@ const MovieItem: React.FC<MovieItemProps> = ({
         </Typography>
       </CardContent>
       <CardActions className="card-actions">
-        <Button size="small" component={Link} to={`/movie/${imdbID}`}>
+        <Button
+          size="small"
+          onClick={handleClick}
+          component={Link}
+          to={`/movie/${imdbID}`}
+        >
           Learn More
         </Button>
       </CardActions>

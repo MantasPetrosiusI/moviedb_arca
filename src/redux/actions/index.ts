@@ -9,6 +9,7 @@ export const RESET_STATE = "RESET_STATE";
 export const fetchMovies = (title: string) => {
   return async (dispatch: AppDispatch) => {
     try {
+      dispatch({ type: SET_LOADING_SEARCH, payload: true });
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_URL_SEARCH}/${title}`,
         {
@@ -35,6 +36,7 @@ export const fetchMovies = (title: string) => {
 export const setMovieDetails = (id: string) => {
   return async (dispatch: AppDispatch) => {
     try {
+      dispatch({ type: SET_LOADING_DETAILS, payload: true });
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_URL_MOVIES}/${id}`,
         {

@@ -6,18 +6,20 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../css/Navigation.css";
 import { fetchMovies } from "../redux/actions";
 import { useAppDispatch } from "../redux/hooks";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation: React.FC = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Enter" && searchText.trim() !== "") {
         dispatch(fetchMovies(searchText));
         setSearchText("");
+        navigate(`/search/keyword=${searchText}`);
       }
     };
 

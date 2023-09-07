@@ -26,6 +26,7 @@ const moviesReducer = (state = initialState, action: Action) => {
       return {
         ...state,
         moviesList: action.payload,
+        loadingSearch: false,
       };
     case "SET_MOVIE":
       return {

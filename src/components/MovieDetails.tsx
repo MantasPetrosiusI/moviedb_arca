@@ -4,11 +4,14 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { setMovieDetails } from "../redux/actions";
 import { RootState } from "../redux/interfaces";
 import "../css/MovieDetails.css";
+import Spinner from "./Spinner";
 
 const MovieDetails = () => {
   const { imdbID } = useParams<{ imdbID: string }>();
   const dispatch = useAppDispatch();
-
+  const isLoading = useAppSelector(
+    (state: RootState) => state.movies.loadingDetails
+  );
   useEffect(() => {
     if (imdbID) {
       dispatch(setMovieDetails(imdbID));
@@ -16,6 +19,11 @@ const MovieDetails = () => {
   }, [dispatch, imdbID]);
 
   const setMovie = useAppSelector((state: RootState) => state.movies.movie);
+
+  if (isLoading) {
+    // Display the Spinner while loading
+    return <Spinner />;
+  }
 
   if (!setMovie) {
     return <div>Loading...</div>;
