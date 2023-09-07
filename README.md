@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Movie Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The Movie Search App is a web application that allows users to search for movies by title using the OMDBApi. Users can click on a movie to view its details, including a summary, genre, year, age rating, runtime, director, writer, actors, and a full poster.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To run the Movie Search App, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone this repository to your local machine.
+2. Navigate to the project directory using your terminal.
+3. Run the following command to install the required dependencies using npm or yarn:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ```bash
+   npm install
+   # OR
+   yarn
+   ```
 
-### `npm test`
+4. Obtain an OMDBApi key by visiting [https://www.omdbapi.com](https://www.omdbapi.com) and sign up for a free account.
+5. Create a `.env` file in the project root and add your OMDBApi key like this:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   REACT_APP_OMDB_API_KEY=your_api_key_here
+   ```
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To start the Movie Search App, run the following command:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+# OR
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once the application is running, open your web browser and navigate to `http://localhost:3000`. You can now search for movies by title and view their details.
 
-### `npm run eject`
+## Contact Information
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If you have any questions or encounter issues, feel free to reach out to the project owner:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Email: mantas.petrosius@outlook.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Acknowledgments
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Thank you to the OMDBApi for providing movie data.
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
