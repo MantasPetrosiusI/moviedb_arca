@@ -46,7 +46,3 @@ If you have any questions or encounter issues, feel free to reach out to the pro
 ## Acknowledgments
 
 Thank you to the OMDBApi for providing movie data.
-
-```
-
-```
