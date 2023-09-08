@@ -51,7 +51,9 @@ To run this application locally, follow these steps:
 
    ```bash
    npm install
-   # OR
+   ```
+
+   ```bash
    yarn install
    ```
 
@@ -59,15 +61,19 @@ To run this application locally, follow these steps:
 
    ```bash
    npm run build
-   # OR
+   ```
+
+   ```bash
    yarn build
    ```
 
 5. Start the server:
 
    ```bash
-   npm run dev
-   # OR
+   npm start
+   ```
+
+   ```bash
    yarn start
    ```
 
