@@ -8,7 +8,6 @@ This is a React application that allows users to search for movies by title and 
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
-- [OR](#or)
   - [Usage](#usage)
   - [Folder Structure](#folder-structure)
   - [Technologies Used](#technologies-used)
@@ -18,6 +17,8 @@ This is a React application that allows users to search for movies by title and 
 
 - **Search Page:** Users can search for movies by entering a title.
 - **Search Results:** Displays a list of movies matching the search criteria with titles, poster images, and release years.
+- **Last Searched Movies:** Displays a list of movies that have been searched by users
+- **Users Also Searched:** Displays keywords used prior
 - **Movie Details:** Clicking on a movie in the search results leads to a details page with additional information about the selected movie.
 - **Redux State Management:** Manages application state using Redux for efficient data sharing between components.
 - **React Router:** Implements client-side routing for different pages or components.
