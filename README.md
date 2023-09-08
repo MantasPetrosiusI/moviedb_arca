@@ -35,9 +35,9 @@ To run this application locally, follow these steps:
 
 2. Create a `.env` file in the root directory and add your OMDBApi key:
 
-   ```
-   REACT_APP_BACKEND_URL_SEARCH = [ your backend url for search results]
-   REACT_APP_BACKEND_URL_MOVIES = [your backend url for movie details]
+   ```env
+   REACT_APP_BACKEND_URL_SEARCH = [ your backend url for search results ]
+   REACT_APP_BACKEND_URL_MOVIES = [ your backend url for movie details ]
    ```
 
 3. Install required dependencies:
