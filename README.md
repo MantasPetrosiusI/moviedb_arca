@@ -33,29 +33,38 @@ To run this application locally, follow these steps:
    cd movie-search-app
    ```
 
-2. Install the project dependencies:
+2. Create a `.env` file in the root directory and add your OMDBApi key:
+
+   ```
+   REACT_APP_BACKEND_URL_SEARCH = [ your backend url for search results]
+   REACT_APP_BACKEND_URL_MOVIES = [your backend url for movie details]
+   ```
+
+3. Install required dependencies:
 
    ```bash
    npm install
    # OR
-   yarn
+   yarn install
    ```
 
-3. Create a `.env` file in the root directory and add your OMDBApi key:
-
-   ```
-   REACT_APP_OMDB_API_KEY=your_api_key_here
-   ```
-
-4. Start the development server:
+4. Build the server:
 
    ```bash
-   npm start
+   npm run build
+   # OR
+   yarn build
+   ```
+
+5. Start the server:
+
+   ```bash
+   npm run dev
    # OR
    yarn start
    ```
 
-5. Open your web browser and navigate to `http://localhost:3000` to access the application.
+6. Open your web browser and navigate to `http://localhost:3000` to access the application.
 
 ## Usage
 
