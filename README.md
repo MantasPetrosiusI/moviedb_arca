@@ -8,6 +8,7 @@ This is a React application that allows users to search for movies by title and 
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
+- [OR](#or)
   - [Usage](#usage)
   - [Folder Structure](#folder-structure)
   - [Technologies Used](#technologies-used)
@@ -29,8 +30,13 @@ To run this application locally, follow these steps:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/movie-search-app.git
-   cd movie-search-app
+   git clone https://github.com/MantasPetrosiusI/moviedb-arca.git
+   cd moviedb-arca
+
+   # OR
+   Clone from the respository
+
+   https://github.com/MantasPetrosiusI/moviedb_arca
    ```
 
 2. Create a `.env` file in the root directory and add your OMDBApi key:
